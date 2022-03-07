@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>FAVORITE CHARACTER DETAILS</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+
+<ion-content>
+    <div *ngIf="character">
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input [(ngModel)]="character.name"></ion-input>
+      </ion-item>
+   
+      <ion-item>
+        <ion-label position="stacked">Species</ion-label>
+        <ion-input [(ngModel)]="character.species"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Origin</ion-label>
+        <ion-input [(ngModel)]="character.origin.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Status</ion-label>
+        <ion-input [(ngModel)]="character.status"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Location</ion-label>
+        <ion-input [(ngModel)]="character.location.name"></ion-input>
+      </ion-item>
+
+    </div>
+   
+    <ion-button expand="block" color="success" (click)="updateCharacter()">
+      <ion-icon name="save" slot="start"></ion-icon>
+      UPDATE
+    </ion-button>
+    <ion-button expand="block" color="danger" (click)="deleteCharacter()">
+      <ion-icon name="trash" slot="start"></ion-icon>
+      DELETE
+    </ion-button>
+ 
+</ion-content>

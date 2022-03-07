@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,60 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.background {
+  background-image: url("assets/wallpaper.jpg");
+}
+
+.ion-page,
+#root,
+body,
+ion-content,
+#background-content {
+  --background: url(./assets/wallpaper.jpg);
+  --background-repeat: no-repeat;
+  --background-size: 50% 50%;
+  --background-position: center;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 5px solid #ffbd37;
+  border-radius: 100%;
+}
+
+.first {
+  margin: -30px 0 0 -30px;
+  height: 60px;
+  width: 60px;
+  border-top-color: #ff79a3;
+  animation: loading 3s infinite linear;
+}
+
+.second {
+  margin: -20px 0 0 -20px;
+  height: 40px;
+  width: 40px;
+  border-top-color: #4c2f87;
+  animation: loading 2s infinite linear;
+}
+
+.third {
+  margin: -10px 0 0 -10px;
+  height: 20px;
+  width: 20px;
+  border-top-color: #321752;
+  animation: loading 1s infinite linear;
+}

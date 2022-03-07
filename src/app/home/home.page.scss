@@ -25,3 +25,32 @@
 #container a {
   text-decoration: none;
 }
+
+/*tamaño de la imagen en móvil*/
+@media screen and (max-width: 480px) {
+  .init {
+    width: 90%;
+  }
+  .initLogo {
+    width: 50%;
+  }
+}
+
+/* tamaño de la imagen en tablets*/
+@media screen and (min-width: 481px) and (max-width: 846px) {
+  .init {
+    width: 60%;
+  }
+  .initLogo {
+    width: 40%;
+  }
+}
+/* tamaño de la imagen  en pc*/
+@media screen and (min-width: 847px) and (max-width: 2200px) {
+  .init {
+    width: 30%;
+  }
+  .initLogo {
+    width: 15%;
+  }
+}

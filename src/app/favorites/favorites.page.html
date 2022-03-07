@@ -1,0 +1,39 @@
+<ion-header >
+  <ion-toolbar color="dark">
+    <ion-title ><a routerLink="/home"><ion-icon style="color: white;" name="caret-back-outline"></ion-icon></a> FAVORITES CHARACTERS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>What can I do here?</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      On this page you can see all your favourite characters.
+     <br>If you want to update or delete a character, click on the info icon.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-list>
+      <ion-list-header color="light">
+        <ion-label>FAVORITES CHARACTERS</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let character of characters" (click)="openCharacter(character)">
+        <ion-thumbnail>
+          <img src="{{character.image}}">
+        </ion-thumbnail>
+        <ion-label> 
+          {{ character.name }} 
+        </ion-label>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  
+
+</ion-content>

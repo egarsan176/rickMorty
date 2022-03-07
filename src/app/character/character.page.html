@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-title *ngIf="see">  
+        <a routerLink="/characters"><ion-icon  style="color: white;" name="caret-back-outline"></ion-icon></a>
+        {{ character.name }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <div *ngIf="see"> <!-- si la propiedad es true, siginifica que hay respuesta de la petición y se muestran los detalles -->
+  
+        <ion-img src="{{character.image}}"></ion-img> 
+      <ion-card>
+        
+        <ion-card-header>
+          <ion-card-title>{{ character.name }}</ion-card-title>
+          <ion-button *ngIf="!isFav" color="light" (click)="addFavorito(character)"><ion-icon name="star-outline"></ion-icon></ion-button>
+          <ion-button *ngIf="isFav" color="light" (click)="deleteFavorito(character)"><ion-icon  name="star"></ion-icon></ion-button>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-text color="medium">
+                <p>Species: {{character.species}}</p>
+              </ion-text>
+
+              <ion-text color="medium">
+                <p>Origin: {{character.origin.name}}</p>
+              </ion-text>
+
+              <ion-text color="medium">
+                <p>Status: {{character.status}}</p>
+              </ion-text>
+              <ion-text color="medium">
+                <p>Location: {{character.location.name}}</p>
+              </ion-text>
+              <ion-text color="medium">
+                <p>Created: {{character.created}}</p>
+              </ion-text>
+            
+        </ion-card-content>
+      </ion-card>
+      
+    </div>

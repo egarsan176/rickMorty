@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title> <a routerLink="/home"><ion-icon style="color: white;" name="caret-back-outline"></ion-icon></a>FIND A CHARACTER</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+<ion-card>
+  <!-- barra de búsqueda -->
+  <ion-toolbar>
+    <ion-searchbar placeholder="Type here the name of the character you want to search for" animated debounce="700" [value]="search" (ionChange)="getCharacter($event)"> </ion-searchbar>
+  </ion-toolbar>
+</ion-card>
+
+
+    <!-- para mostrar un loading mientras se resuelve la petición-->
+<div class="loading first" *ngIf="loading">
+  <div class="loading second">
+    <div class="loading third"></div>  
+  </div>  
+</div>
+
+<ion-card *ngIf="search">
+  <ion-list>
+    <ion-item button *ngFor="let character of characters">
+  
+      <ion-thumbnail>
+        <img src="{{character.image}}">
+      </ion-thumbnail>
+  
+      <ion-label style="margin-left: 2%;" >
+        <ion-text color="dark">
+          <h2><b>{{character.name}}</b></h2>
+        </ion-text>
+        <ion-text color="medium">
+          <p>Specie: {{character.species}}</p>
+        </ion-text>
+      </ion-label>
+  
+      <a [routerLink]="['/character', character.id]"><ion-icon style="color: black;" name="chevron-forward-outline">  
+      </ion-icon></a>
+  
+    </ion-item>
+  </ion-list>
+</ion-card>
+
+
+
+</ion-content>
