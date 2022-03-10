@@ -33,6 +33,7 @@ export class CharactersPage implements OnInit {
     },
     error: e =>{
         console.log(e)
+        this.loading=false;
     }
     })
   }

@@ -12,6 +12,7 @@ import { CharactersService } from '../services/characters.servcice';
 export class FavoritesPage implements OnInit {
 
   characters: Character[];
+  see: boolean = false;
 
   constructor(private charService: CharactersService, private cd: ChangeDetectorRef,  private modalCtrl: ModalController) { }
 
@@ -25,6 +26,7 @@ export class FavoritesPage implements OnInit {
     .subscribe(data =>{
       this.characters = data;
       this.cd.detectChanges();
+      this.see = true;
     })
   }
 

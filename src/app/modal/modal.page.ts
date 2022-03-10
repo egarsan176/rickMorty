@@ -30,7 +30,7 @@ export class ModalPage implements OnInit {
   async updateCharacter() {
     await this.charService.updateFavorite(this.character);
     const toast = await this.toastCtrl.create({
-      message: 'Usuario actualizado.',
+      message: 'Update successfully.',
       duration: 2000
     });
     toast.present();

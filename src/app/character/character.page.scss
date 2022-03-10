@@ -1,0 +1,22 @@
+.img {
+  width: 30%;
+}
+/*tamaño de la imagen en móvil*/
+@media screen and (max-width: 480px) {
+  .img {
+    width: 70%;
+  }
+}
+
+/* tamaño de la imagen en tablets*/
+@media screen and (min-width: 481px) and (max-width: 846px) {
+  .img {
+    width: 50%;
+  }
+}
+/* tamaño de la imagen  en pc*/
+@media screen and (min-width: 847px) and (max-width: 2200px) {
+  .img {
+    width: 30%;
+  }
+}

@@ -33,6 +33,7 @@ export class CharactersService {
     //MÉTODO para añadir un personaje favorito que se guarda en la base de datos
     addFavorito(character: Character){
         const charRef = collection(this.firestore, 'characters');
+        
         return addDoc(charRef, character);
     }
 
@@ -60,10 +61,10 @@ export class CharactersService {
     });
     }
 
-    //MÉTODO para obtener un personaje favorito en concreto de la base de datos según su id
+    //MÉTODO SOLO VÁLIDO PARA EL MODAL para obtener un personaje favorito en concreto de la base de datos según su id
     getCharacterByID(id): Observable<Character>{
         const charDocRef = doc(this.firestore, `characters/${id}`);
         return docData(charDocRef, { idField: 'id' }) as Observable<Character>;
-      }
+    }
 
 }

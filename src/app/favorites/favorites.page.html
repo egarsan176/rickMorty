@@ -16,8 +16,8 @@
      <br>If you want to update or delete a character, click on the info icon.
     </ion-card-content>
   </ion-card>
-
-  <ion-card>
+<div *ngIf="see">
+  <ion-card >  
     <ion-list>
       <ion-list-header color="light">
         <ion-label>FAVORITES CHARACTERS</ion-label>
@@ -34,6 +34,8 @@
     </ion-list>
   </ion-card>
 
+</div>
+ 
   
 
 </ion-content>

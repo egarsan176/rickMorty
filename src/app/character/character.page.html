@@ -11,13 +11,20 @@
   
     <div *ngIf="see"> <!-- si la propiedad es true, siginifica que hay respuesta de la petición y se muestran los detalles -->
   
-        <ion-img src="{{character.image}}"></ion-img> 
+      <div class="text-center mt-3">
+
+        <img src="{{character.image}}" class="img">
+      </div>
       <ion-card>
         
         <ion-card-header>
           <ion-card-title>{{ character.name }}</ion-card-title>
-          <ion-button *ngIf="!isFav" color="light" (click)="addFavorito(character)"><ion-icon name="star-outline"></ion-icon></ion-button>
-          <ion-button *ngIf="isFav" color="light" (click)="deleteFavorito(character)"><ion-icon  name="star"></ion-icon></ion-button>
+
+          <ion-button  color="light" (click)="favorite(character)">
+            <ion-icon [name]="estrella"></ion-icon>
+           
+          </ion-button>
+          
         </ion-card-header>
         <ion-card-content>
             <ion-text color="medium">
@@ -35,7 +42,7 @@
                 <p>Location: {{character.location.name}}</p>
               </ion-text>
               <ion-text color="medium">
-                <p>Created: {{character.created}}</p>
+                <p>Created: {{date}}</p>
               </ion-text>
             
         </ion-card-content>

@@ -23,7 +23,7 @@
   </div>  
 </div>
 
-<ion-card *ngIf="search">
+<ion-card *ngIf="characters.length>0">
   <ion-list>
     <ion-item button *ngFor="let character of characters">
   
@@ -46,6 +46,8 @@
     </ion-item>
   </ion-list>
 </ion-card>
+
+
 
 
 
