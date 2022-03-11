@@ -88,7 +88,8 @@ export class CharacterPage implements OnInit {
         if(element.name == character.name){
           this.isFav = true;
           this.estrella = "star"
-        }else{
+        }
+        if(!this.isFav){
           this.isFav = false;
           this.estrella = "star-outline"
         }
