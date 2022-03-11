@@ -55,6 +55,7 @@ export class CharacterPage implements OnInit {
     })
   }
 
+  //MÉTODO que añade un personaje favorito o lo elimina
   favorite(character: Character){
     //console.log("entrar",this.isFav)
     if(this.isFav == false){
